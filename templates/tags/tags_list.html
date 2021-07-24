@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Tags
+{% endblock %}
+
+{% block content %}
+    {% for tag in tags %}
+    <div class="card mb-5" >
+        <div class="card-header">
+          <a href="{{ tag.get_absolute_url }}" class="btn btn-primary">{{ tag.title }}</a>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
