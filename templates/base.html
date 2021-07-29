@@ -24,6 +24,11 @@
           </form>
         </div>
       </nav>
+
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'logout_url' %}" class="btn btn-danger">log out</a>
+    {% endif %}
+
     {% block content %}
         No content
     {% endblock %}
