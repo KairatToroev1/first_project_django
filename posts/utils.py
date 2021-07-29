@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
+
+
 class ObjectCreateMixin:
     form = None
     template = None
@@ -48,3 +50,4 @@ class ObjectDeleteMixin:
         obj = get_object_or_404(self.obj_class, id=id)
         obj.delete()
         return redirect(reverse(self.redirect_template))
+
